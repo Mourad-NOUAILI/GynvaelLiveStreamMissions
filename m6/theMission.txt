@@ -1,0 +1,24 @@
+Welcome back agent 1336.
+No mail.
+> mission --take
+MISSION 006               goo.gl/Z4u9cv             DIFFICULTY: ███████░░░ [7╱10]
+┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅
+
+Finally we hired a new secret agent and moved agent Huffman to do some harmless
+paperwork. That's the good news. The bad news is that agent Huffman made it his
+mission to train our new agent and this went exactly as expected - i.e. we cannot
+decode the report received from the new agent.
+
+Long story short, agent Huffman Junior sent us this file:
+
+  http://goo.gl/S395x6
+
+We don't really know how to decode it, nor do we care at this point. Please take
+a look and decode it if you can.
+
+GOOD LUCK!
+
+If you decode the answer, put it in the comments under this video! If you write
+a blogpost / post your solution online, please add a link in the comments too!
+
+P.S. I'll show/explain the solution on the stream next week.
