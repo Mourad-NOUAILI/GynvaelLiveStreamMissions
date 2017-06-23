@@ -11,6 +11,8 @@ The first reflex is to draw that points on an image.
 1. Decode the QR code.
 
 ### Get the image (1 && 2)
+#### N.B.: With python, python-pil package must be installed: https://launchpad.net/ubuntu/xenial/+package/python-pil
+
 To do that you must read some code in you favorite langage (you can use python with the PIL library, or C/C++ with openCV lib.)
 ```python
 import ast
@@ -48,6 +50,85 @@ print"[+] Creating QR code image..."
 im = createQRImage('M6-QR.png', points)
 print "\t'M6-QR.png' created.";
 ```
+#### N.B.: With c++, OpenCV must be installed: http://docs.opencv.org/trunk/d7/d9f/tutorial_linux_install.html
+
+```c++
+/*
+Needs: OpenCV installed
+Compile: g++ -std=c++11 sol.cpp -o sol `pkg-config opencv --cflags --libs`
+*/
+
+#include <bits/stdc++.h>
+
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
+using namespace cv;
+using namespace std;
+
+std::string extract_ints(std::ctype_base::mask category, std::string str, std::ctype<char> const& facet)
+{
+    using std::strlen;
+
+    char const *begin = &str.front(),
+               *end   = &str.back();
+
+    auto res = facet.scan_is(category, begin, end);
+
+    begin = &res[0];
+    end   = &res[strlen(res)];
+
+    return std::string(begin, end);
+}
+
+std::string extract_ints(std::string str)
+{
+    return extract_ints(std::ctype_base::digit, str,
+         std::use_facet<std::ctype<char>>(std::locale("")));
+}
+
+
+int  main(int argc, char const *argv[]) {
+  vector<pair<int, int> > points;
+  int maxX = -1, maxY = -1;
+
+  cout <<"[+] Reading coordinates from file...\n";
+  ifstream codeFile("code.txt", ios::in);
+
+  if(codeFile) {
+    string line;
+    while(getline(codeFile, line)) {
+      istringstream iss(line);
+      int x, y;
+      char ignore;
+      iss >> ignore >> x >> ignore >>  y >> ignore ;
+      maxX = max(maxX, x);
+      maxY = max(maxY, y);
+      pair<int, int> p = make_pair(x, y);
+      points.push_back(p);
+    }
+    codeFile.close();
+  }
+
+  cout <<"[+] Creating QR code image...\n";
+  Mat img(maxX+1, maxY+1, CV_8UC1, Scalar(255));
+  cout <<"\tImage width: " << img.cols <<"\n";
+  cout <<"\tImage height: " << img.rows <<"\n";
+
+  vector<pair<int, int> >::iterator it;
+  for (it = points.begin() ; it != points.end() ; ++it) {
+    int x = it->first;
+    int y = it->second;
+    img.at<uchar>(y, x) = 0x00;
+  }
+
+  imwrite("qrcode.png", img);
+  cout <<"\t'qrcode.png' created.\n";
+  cout <<"[++END++]\n";
+  return 0;
+}
+
+```
 
 The obtained image is 25x25 pixels size:
 
@@ -84,6 +165,8 @@ resize it the Gimp to 400x400 pixels:
 
 
 ## Python script to do all the staff
+### N.B.: python-qrtools package must be installed: https://code.launchpad.net/~qr-tools-developers/+archive/ubuntu/daily
+
 ```python
 import ast
 from PIL import Image, ImageColor
