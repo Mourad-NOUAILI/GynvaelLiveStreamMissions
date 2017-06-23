@@ -1,6 +1,6 @@
 /*
 Needs: OpenCV installed
-Compile: g++ -std=c++11 sol.cpp -o sol `pkg-config opencv --cflags --libs`
+Compile: g++ -std=c++11 getQR.cpp -o getQR `pkg-config opencv --cflags --libs`
 */
 
 #include <bits/stdc++.h>
