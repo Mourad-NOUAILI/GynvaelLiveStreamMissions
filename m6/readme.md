@@ -55,7 +55,7 @@ print "\t'M6-QR.png' created.";
 ```c++
 /*
 Needs: OpenCV installed
-Compile: g++ -std=c++11 sol.cpp -o sol `pkg-config opencv --cflags --libs`
+Compile: g++ -std=c++11 getQR.cpp -o getQR `pkg-config opencv --cflags --libs`
 */
 
 #include <bits/stdc++.h>
@@ -65,28 +65,6 @@ Compile: g++ -std=c++11 sol.cpp -o sol `pkg-config opencv --cflags --libs`
 
 using namespace cv;
 using namespace std;
-
-std::string extract_ints(std::ctype_base::mask category, std::string str, std::ctype<char> const& facet)
-{
-    using std::strlen;
-
-    char const *begin = &str.front(),
-               *end   = &str.back();
-
-    auto res = facet.scan_is(category, begin, end);
-
-    begin = &res[0];
-    end   = &res[strlen(res)];
-
-    return std::string(begin, end);
-}
-
-std::string extract_ints(std::string str)
-{
-    return extract_ints(std::ctype_base::digit, str,
-         std::use_facet<std::ctype<char>>(std::locale("")));
-}
-
 
 int  main(int argc, char const *argv[]) {
   vector<pair<int, int> > points;
