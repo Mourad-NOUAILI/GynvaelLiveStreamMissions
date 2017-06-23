@@ -55,4 +55,29 @@ The obtained image is 25x25 pixels size:
 ![QR code](M6-QR.png)
 
 If you try do decode the image with an online QR decder for example https://webqr.com/, you will get nothing:
-![QR code](/images/webqr-err1.png)
+![error1](/m6/images/webqr-err1.png)
+
+### Do a mirror transformation
+The image may be flipped, doing a flip to the image may resolve the problem. 
+
+Use Gimp or any Images Editor. I use Gimp:
+
+![Mirrored QR](/m6/images/M6-QR-MIRRORED.png)
+
+
+Let's try with https://webqr.com/:
+
+![error2](/m6/images/webqr-err2.png)
+
+
+### Resize the QR image
+May be the QR code cound't be read because of the size.
+
+resize it the Gimp to 400x400 pixels:
+
+![resized](/m6/images/M6-QR-RESIZED.png)
+
+
+### Decode it
+
+![decoded](/m6/images/ANSWER.png)
