@@ -148,3 +148,5 @@ if myCode.decode():
 else:
     print "\tcan't decode QR code !!"
 ```
+
+![script out put](/m6/images/script-output.png)
