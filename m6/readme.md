@@ -142,7 +142,7 @@ resize it the Gimp to 400x400 pixels:
 ![decoded](/m6/images/ANSWER.png)
 
 
-## Python script to do all the staff
+## Python script to do all the stuff
 ### N.B.: python-qrtools package must be installed: https://code.launchpad.net/~qr-tools-developers/+archive/ubuntu/daily
 
 ```python
