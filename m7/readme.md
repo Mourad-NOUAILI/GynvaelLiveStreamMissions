@@ -13,3 +13,25 @@ The content of the decompressed file (report.txt) is unreadble:
 
 ![UNR](/m7/images/extracted-wrong-file.png)
 
+
+You need to get some information about the ZIP file. I use zipinfo:
+
+![INFO1](/m7/images/zipinfo-before-change.png)
+
+As you see, there is a compression:
+```
+compressed size:                                94 bytes
+uncompressed size:                              122 bytes
+```
+But the NO compression method:
+```
+compression method:                             none (stored)
+```
+
+## Compression methods
+https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html
+![CM1](/m7/images/ppmd.png)
+
+
+https://en.wikipedia.org/wiki/Zip_(file_format)#Compression_methods
+![CM2](/m7/images/cm-wiki.png)
