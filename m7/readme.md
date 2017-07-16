@@ -27,11 +27,26 @@ But the NO compression method:
 ```
 compression method:                             none (stored)
 ```
+## Some notions
 
-## Compression methods
+### Compression methods
+
 https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html
+
 ![CM1](/m7/images/ppmd.png)
 
 
 https://en.wikipedia.org/wiki/Zip_(file_format)#Compression_methods
+
 ![CM2](/m7/images/cm-wiki.png)
+
+### The ZIP headers
+
+https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html
+
+![H1](/m7/images/zip-lfh.png)
+
+![H2](/m7/images/zip-cdh.png)
+
+## Steps to resolve the missions (in construction)
+
