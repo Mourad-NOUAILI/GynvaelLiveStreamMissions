@@ -88,6 +88,30 @@ As we had seen, we must change the value of the compression method from 0x0000 t
 
 * 0x0062: PPMd version I, Rev 1 
 
-### Step 1: Change the compresiion method value
+### Step 1: Change the compression method value
+Open the ZIP file with your favorite Hex Editor.
 
+After multiple tries, We discover that the compression method used by Gynvael is: PPMd.
 
+```You must know that the ZIP headers values are little indian.```
+
+Before change:
+
+![B1](/m7/images/bytes-before-change.png)
+
+After change:
+
+![A1](/m7/images/hex-change-byte.png)
+
+### Step 2: ckeck it
+
+Run zipinfo to check:
+
+![B2](/m7/images/zipinfo-after-change.png)
+
+### Step 3: Extract the file
+
+![X](/m7/images/extract-the-correct-file.png)
+
+The answer is:
+![R](/m7/images/the-answer.png)
