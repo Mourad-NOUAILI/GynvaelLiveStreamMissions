@@ -48,5 +48,46 @@ https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html
 
 ![H2](/m7/images/zip-cdh.png)
 
-## Steps to resolve the missions (in construction)
+## Steps to resolve the mission
+
+As we had seen, we must change the value of the compression method from 0x0000 to one value from the list below:
+
+* 0x0001: shrunk
+
+* 0x0002: reduced with compression factor 1
+
+* 0x0003: reduced with compression factor 2
+
+* 0x0004: reduced with compression factor 3
+
+* 0x0005: reduced with compression factor 4
+
+* 0x0006: imploded
+
+* 0x0007: reserved
+
+* 0x0008: deflated
+
+* 0x0009: enhanced deflated
+
+* 0x000A: PKWare DCL imploded
+
+* 0x000B: reserved
+
+* 0x000C: compressed using BZIP2
+
+* 0x000D: reserved
+
+* 0x000E: LZMA
+
+* 0x000F-0x0011: reserved
+
+* 0x0012: compressed using IBM TERSE
+
+* 0x0013: IBM LZ77 z
+
+* 0x0062: PPMd version I, Rev 1 
+
+### Step 1: Change the compresiion method value
+
 
