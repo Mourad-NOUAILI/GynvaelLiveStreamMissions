@@ -114,4 +114,5 @@ Run zipinfo to check:
 ![X](/m7/images/extract-the-correct-file.png)
 
 The answer is:
+
 ![R](/m7/images/the-answer.png)
