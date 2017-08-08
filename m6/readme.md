@@ -147,8 +147,24 @@ resize it the Gimp to 400x400 pixels:
 
 ```python
 import ast
-from PIL import Image, ImageColor
-from  qrtools import QR
+try:
+    from PIL import Image, ImageColor
+except:
+    print "Pillow is not installed."
+    print "python2: pip install Pillow"
+    print "python3: python3 -m pip install Pillow"
+    print "The solution on my github: https://github.com/Mourad-NOUAILI/GynvaelLiveStreamMissions/tree/master/m6"
+
+
+try:
+    from  qrtools import QR
+except:
+    print "qrtools not installed."
+    print "sudo add-apt-repository ppa:qr-tools-developers/daily"
+    print "sudo apt update"
+    print "sudo apt intsall python-qrtools"
+    print "The solution on my github: https://github.com/Mourad-NOUAILI/GynvaelLiveStreamMissions/tree/master/m6"
+
 
 def getPoints(filename):
     with open(filename, 'r') as f:
@@ -208,6 +224,7 @@ if myCode.decode():
   print "\tThe code is: "+myCode.data
 else:
     print "\tcan't decode QR code !!"
+
 ```
 
 ![script out put](/m6/images/script-output.png)
