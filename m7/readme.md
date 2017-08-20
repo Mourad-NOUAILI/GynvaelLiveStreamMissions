@@ -117,7 +117,7 @@ The answer is:
 
 ![R](/m7/images/the-answer.png)
 
-#Python code that do all the stuff
+# Python code that do all the stuff
 
 ```python
 import os
